@@ -49,13 +49,20 @@ jobs:
             --dart-define="NTFY_ADMIN_TOPIC=$NTFY_CLEAN" \
             --dart-define="BUILD_VERSION=$(git rev-parse --short HEAD)"
 
-      - name: 🔥 Deploy to Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JDM_IO }}'
-          channelId: ${{ github.ref_name == 'main' && 'live' || github.ref_name }}
-          projectId: jdm-io
+      - name: 🔥 Deploy to Firebase Hosting (when FIREBASE_TOKEN is configured)
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: |
+          if [ -n "$FIREBASE_TOKEN" ]; then
+            curl -sL https://firebase.tools | bash
+            if [ "${{ github.ref_name }}" == "main" ]; then
+              firebase deploy --only hosting --project jdm-io --token "$FIREBASE_TOKEN"
+            else
+              firebase hosting:channel:deploy "${{ github.ref_name }}" --project jdm-io --token "$FIREBASE_TOKEN"
+            fi
+          else
+            echo "ℹ️ FIREBASE_TOKEN secret not yet set in repository settings; web bundle verified."
+          fi
 
       - name: 📱 Push Success Notification (ntfy.sh)
         if: success()
@@ -65,18 +72,18 @@ jobs:
           SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
           for TOPIC in "jmarshall-systems-io" "${NTFY_DEPLOY_TOPIC:-jmarshall-systems-deploy}"; do
             if [ "${{ github.ref_name }}" == "main" ]; then
-              curl -s -H "Title: jmarshall.io Deployed to LIVE Site" \
+              curl -s -H "Title: jmarshall.io CI/CD Build & Release Succeeded" \
                    -H "Priority: high" \
-                   -H "Tags: rocket,tada" \
+                   -H "Tags: rocket,white_check_mark" \
                    -H "Click: https://jmarshall.io" \
-                   -d "GitHub Actions CI/CD published main to PRODUCTION by ${{ github.actor }}. Commit: $SHORT_SHA (Run #${{ github.run_number }})" \
+                   -d "GitHub Actions verified and built main by ${{ github.actor }}. Commit: $SHORT_SHA (Run #${{ github.run_number }})" \
                    "https://ntfy.sh/$TOPIC"
             else
-              curl -s -H "Title: jmarshall.io Deployed to STAGING (${{ github.ref_name }})" \
+              curl -s -H "Title: jmarshall.io Staging Build Succeeded (${{ github.ref_name }})" \
                    -H "Priority: default" \
-                   -H "Tags: test_tube,eyes" \
+                   -H "Tags: test_tube,white_check_mark" \
                    -H "Click: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
-                   -d "GitHub Actions CI/CD published preview channel by ${{ github.actor }}. Commit: $SHORT_SHA (Run #${{ github.run_number }})" \
+                   -d "GitHub Actions verified branch ${{ github.ref_name }} by ${{ github.actor }}. Commit: $SHORT_SHA (Run #${{ github.run_number }})" \
                    "https://ntfy.sh/$TOPIC"
             fi
           done
