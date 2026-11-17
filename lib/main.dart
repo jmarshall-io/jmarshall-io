@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:jmarshall_io/l10n/app_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -80,6 +81,38 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
+  @override
+  void initState() {
+    super.initState();
+    _selectedIndex = _resolveInitialTabFromUrl();
+  }
+
+  int _resolveInitialTabFromUrl() {
+    final Uri uri = Uri.base;
+    final String path = uri.path.toLowerCase();
+    final String fragment = uri.fragment.toLowerCase();
+    final String tabParam = (uri.queryParameters['tab'] ?? '').toLowerCase();
+    final String combined = '$path $fragment $tabParam';
+
+    if (combined.contains('chat') ||
+        combined.contains('align') ||
+        combined.contains('intake') ||
+        combined.contains('inquire') ||
+        combined.contains('contact')) {
+      return 1;
+    }
+    if (combined.contains('service')) {
+      return 2;
+    }
+    if (combined.contains('project') || combined.contains('work')) {
+      return 3;
+    }
+    if (combined.contains('setting')) {
+      return 4;
+    }
+    return 0;
+  }
+
   List<Widget> get _pages => <Widget>[
         HomePage(onStartInquiry: () => _onItemTapped(1)),
         const ChatPage(),
@@ -89,6 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ];
 
   void _onItemTapped(int index) {
+    HapticFeedback.selectionClick();
     setState(() {
       _selectedIndex = index;
     });
