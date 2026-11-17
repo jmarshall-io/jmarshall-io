@@ -126,14 +126,14 @@ class _HomePageState extends State<HomePage> {
                   icon: Icons.download,
                   label: AppLocalizations.of(context)!.resume,
                   onPressed: () => _launchURL(
-                    'https://drive.google.com/file/d/1UuHF-4XYtS-2KJw7v5hX7Pr83RDwzTfr/view?usp=sharing',
+                    'https://jmarshall.io/docs/Jonathan-Marshall-Resume-CV.pdf',
                   ),
                 ),
                 _GlowingActionButton(
                   icon: Icons.file_copy,
                   label: AppLocalizations.of(context)!.capabilities,
                   onPressed: () => _launchURL(
-                    'https://drive.google.com/file/d/1I0xMfpFO6oQOPsm0QuapbX3luOUliguQ/view?usp=sharing',
+                    'https://jmarshall.io/docs/Jonathan-Marshall-Capabilities-Statement.pdf',
                   ),
                 ),
                 _GlowingActionButton(

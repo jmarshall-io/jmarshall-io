@@ -237,8 +237,10 @@ class _ProfileSidebarState extends State<ProfileSidebar> {
               ),
               _SocialButton(
                 iconPath: 'assets/logos/obsidian-logo-gradient.svg',
-                onTap: () => _launchURL('https://jmarshall.io'),
-                tooltip: 'Portfolio Architecture Hub',
+                onTap: () => _launchURL(
+                  'https://jmarshall.io/docs/Jonathan-Marshall-Resume-CV.pdf',
+                ),
+                tooltip: 'Download Resume / CV (PDF)',
               ),
               const LanguageSelector(),
             ],
