@@ -23,7 +23,7 @@ class _HudHeaderState extends State<HudHeader> {
 
   String _getCurrentTime() {
     final DateTime now = DateTime.now();
-    return '${DateFormat('yyyy-MM-dd HH:mm:ss').format(now)} ${now.timeZoneName}';
+    return '${DateFormat('HH:mm:ss').format(now)} ${now.timeZoneName}';
   }
 
   void _updateTime() {
@@ -50,14 +50,14 @@ class _HudHeaderState extends State<HudHeader> {
     return SafeArea(
       bottom: false,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Reduced vertical padding
+        padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // LEFT: Profile (Name & Photo)
             Expanded(
-              flex: 3,
+              flex: 6,
               child: Row(
                 children: [
                   // Photo
@@ -67,16 +67,29 @@ class _HudHeaderState extends State<HudHeader> {
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: const Color(0xFF00FFFF).withOpacity(0.2),
-                          blurRadius: 5,
+                          color: const Color(0xFF00FFFF).withOpacity(0.25),
+                          blurRadius: 6,
                           spreadRadius: 0,
                         ),
                       ],
-                      border: Border.all(color: const Color(0xFF00FFFF), width: 1.5),
+                      border: Border.all(
+                        color: const Color(0xFF00FFFF),
+                        width: 1.5,
+                      ),
                     ),
-                    child: const CircleAvatar(
-                      radius: 18, // Reduced size
-                      backgroundImage: AssetImage('assets/profile-photo-bw.jpeg'),
+                    child: ClipOval(
+                      child: Image.network(
+                        'https://avatars.githubusercontent.com/u/252984706?v=4',
+                        width: 34,
+                        height: 34,
+                        fit: BoxFit.cover,
+                        errorBuilder: (_, __, ___) => Image.asset(
+                          'assets/profile-photo-bw.jpeg',
+                          width: 34,
+                          height: 34,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                   ),
                   const SizedBox(width: 10),
@@ -84,26 +97,28 @@ class _HudHeaderState extends State<HudHeader> {
                   Flexible(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
                           AppLocalizations.of(context)!.name,
                           style: const TextStyle(
                             fontFamily: 'Audiowide',
-                            fontSize: 10, // Reduced from 11
+                            fontSize: 10.5,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            letterSpacing: 1.2,
+                            letterSpacing: 1.0,
                           ),
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
                         ),
+                        const SizedBox(height: 2),
                         Text(
                           AppLocalizations.of(context)!.roleTitle,
                           style: const TextStyle(
                             fontFamily: 'Audiowide',
-                            fontSize: 7, // Reduced from 8
+                            fontSize: 7.5,
                             color: Color(0xFF00FFFF),
-                            letterSpacing: 1.5,
+                            letterSpacing: 0.8,
                           ),
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
@@ -114,36 +129,42 @@ class _HudHeaderState extends State<HudHeader> {
                 ],
               ),
             ),
-
-            // RIGHT: Time & Location
+            const SizedBox(width: 8),
+            // RIGHT: Compact Time & Location
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(Icons.location_on, color: Color(0xFF00FFFF), size: 12),
-                    const SizedBox(width: 4),
+                    const Icon(
+                      Icons.location_on,
+                      color: Color(0xFF00FFFF),
+                      size: 11,
+                    ),
+                    const SizedBox(width: 3),
                     Text(
                       AppLocalizations.of(context)!.location,
                       style: const TextStyle(
                         fontFamily: 'Audiowide',
-                        fontSize: 10,
+                        fontSize: 9,
                         color: Color(0xFF00FFFF),
-                        height: 1.2,
+                        height: 1.1,
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 4),
+                const SizedBox(height: 3),
                 Text(
                   formattedDate,
                   style: const TextStyle(
                     fontFamily: 'TrueType',
-                    fontSize: 14,
+                    fontSize: 12.5,
                     color: Color(0xFF00FFFF),
                     fontWeight: FontWeight.bold,
-                    height: 1.2,
+                    letterSpacing: 0.8,
+                    height: 1.1,
                   ),
                 ),
               ],

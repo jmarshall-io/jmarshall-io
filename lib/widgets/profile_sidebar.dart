@@ -95,10 +95,19 @@ class _ProfileSidebarState extends State<ProfileSidebar> {
                   ),
                 ],
               ),
-              child: const CircleAvatar(
-                radius: 56,
-                backgroundImage: AssetImage('assets/profile-photo-bw.jpeg'),
-                backgroundColor: Colors.black,
+              child: ClipOval(
+                child: Image.network(
+                  'https://avatars.githubusercontent.com/u/252984706?v=4',
+                  width: 112,
+                  height: 112,
+                  fit: BoxFit.cover,
+                  errorBuilder: (_, __, ___) => Image.asset(
+                    'assets/profile-photo-bw.jpeg',
+                    width: 112,
+                    height: 112,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
           ),

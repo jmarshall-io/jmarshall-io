@@ -9,10 +9,10 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get roleTitle => 'SYSTEMS ARCHITECT & ORCHESTRATOR';
+  String get roleTitle => 'SYS ARCHITECT & ORCHESTRATOR';
 
   @override
-  String get roleTitleCloud => 'SYSTEMS ARCHITECT & ORCHESTRATOR';
+  String get roleTitleCloud => 'SYS ARCHITECT & ORCHESTRATOR';
 
   @override
   String get bio =>
