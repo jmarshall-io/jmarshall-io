@@ -43,17 +43,17 @@ class _ChatPageState extends State<ChatPage> {
   String _interviewProcess = 'Architecture & Portfolio Walkthrough';
   String _compModel = 'Fixed Monthly Retainer (Fractional)';
   final Set<String> _selectedDomains = {
-    'Cloud, On-Prem & Hybrid (ETL & ELT — dbt / BigQuery / SQL)',
-    'Enterprise Orchestration (Prefect / Talend / SSIS / SAS DI / K8s)',
+    'Systems Integration & Workflow Orchestration (ETL / ELT / APIs)',
+    'Cloud, On-Prem & Hybrid Architecture (GCP / AWS / Azure / IaC)',
   };
 
   static const List<String> _fiveAOptions = [
     'Full 5-A Lifecycle (Assess → Adapt)',
-    '01 Assess (Discovery / TOGAF Audit)',
-    '02 Assimilate (Data & Schema Unification)',
-    '03 Architect (Cloud / On-Prem / Hybrid ETL & ELT)',
-    '04 Automate (Prefect / Talend / SSIS / SAS DI / K8s)',
-    '05 Adapt (CNCF Governance, Training & Enablement)',
+    '01 Assess · Baseline Audit & Vision',
+    '02 Assimilate · Connect & Unify Systems',
+    '03 Architect · Target Blueprint (As-Is → To-Be)',
+    '04 Automate · Orchestrate Workflows & Infra',
+    '05 Adapt · Governance, Training & Evolution',
   ];
 
   static const List<String> _locationOptions = [
@@ -86,12 +86,12 @@ class _ChatPageState extends State<ChatPage> {
   ];
 
   static const List<String> _domainOptions = [
-    'Cloud, On-Prem & Hybrid (ETL & ELT — dbt / BigQuery / SQL)',
-    'Enterprise Orchestration (Prefect / Talend / SSIS / SAS DI / K8s)',
-    'Multi-Cloud Infrastructure (GCP / AWS / Azure / Terraform)',
-    'CNCF Cloud-Native (K8s CKA/CKAD/CKS · Istio · ArgoCD · OPA)',
-    'Observability, Runbooks & Training (Grafana · Loki · Prometheus)',
-    'Enterprise Architecture (TOGAF / FinOps / Zero-Trust)',
+    'Systems Integration & Workflow Orchestration (ETL / ELT / APIs)',
+    'Cloud, On-Prem & Hybrid Architecture (GCP / AWS / Azure / IaC)',
+    'Enterprise Architecture & Modernization (TOGAF · As-Is → To-Be)',
+    'Cloud-Native Platforms & Containers (CNCF · Kubernetes · Mesh)',
+    'Data Platforms & Warehousing (dbt · BigQuery · SQL · Lakes)',
+    'Observability, Zero-Trust Security & Team Enablement',
   ];
 
   bool _isChatStarted = false;
@@ -519,7 +519,7 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                   const SizedBox(height: 22),
                   _buildSectionLabel(
-                    '1. 5-A ENGAGEMENT PHASE (TOGAF MODERNIZATION / GREENFIELD)',
+                    '1. 5-A SYSTEMS MODERNIZATION PHASE (TOGAF APPROACH)',
                   ),
                   _buildChoiceWrap(
                     options: _fiveAOptions,

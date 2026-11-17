@@ -22,50 +22,47 @@ class _HomePageState extends State<HomePage> {
     {
       'step': '01',
       'title': 'ASSESS',
-      'togaf': 'TOGAF Phase A · Architecture Vision & Discovery',
+      'togaf': 'TOGAF Vision · Baseline Ecosystem & Gap Discovery',
       'summary':
-          'Audit "As-Is" systems, technical debt, data gravity, security posture (Zero-Trust / HIPAA / FISMA), and executive CAPEX/OPEX objectives—or scope greenfield product vision.',
+          'Evaluate the organization\'s Current-State ("As-Is") systems, data silos, operational bottlenecks, and security/compliance posture to establish a clear, measurable modernization vision.',
       'deliverable':
-          'Deliverable: As-Is Topology Audit, Risk Matrix & Executive Vision Brief',
+          'Deliverable: As-Is Systems Topology Map, Gap Analysis & Modernization Vision',
     },
     {
       'step': '02',
       'title': 'ASSIMILATE',
-      'togaf': 'TOGAF Phases B–C · Business, Data & Domain Unification',
+      'togaf': 'TOGAF Alignment · Connect & Unify Disparate Systems',
       'summary':
-          'Ingest and normalize fragmented schemas, legacy ETL scripts, APIs, and institutional knowledge into governed metadata contracts and clean domain boundaries.',
+          'Bridge fragmented applications, databases, APIs, and cross-team workflows into standardized data contracts and clean integration boundaries—agnostic of the underlying vendor stack.',
       'deliverable':
-          'Deliverable: Canonical Data Contracts, Metadata Bridge & Lineage Map',
+          'Deliverable: Unified System Integration Contracts, Data Lineage & Domain Model',
     },
     {
       'step': '03',
       'title': 'ARCHITECT',
-      'togaf':
-          'TOGAF Phases D–E · Cloud, On-Prem & Hybrid Blueprint (ETL & ELT)',
+      'togaf': 'TOGAF Target State · Cloud, On-Prem & Hybrid Blueprint',
       'summary':
-          'Design the "To-Be" Reference Architecture and ADRs across Cloud, On-Premises, and Hybrid environments—spanning both ETL and ELT data pipelines (dbt, BigQuery, SQL Server, Talend, SSIS, SAS DI Studio), multi-cloud landing zones (GCP / AWS / Azure), Kubernetes, and Enterprise AI.',
+          'Design resilient Target-State ("To-Be") architectures across Cloud, On-Premises, and Hybrid environments (ETL & ELT)—balancing scalability, Zero-Trust security, and FinOps cost efficiency.',
       'deliverable':
-          'Deliverable: Cloud / On-Prem / Hybrid To-Be Blueprints, ETL/ELT ADRs & FinOps Roadmap',
+          'Deliverable: To-Be Reference Architectures, ADRs & Phased Transition Roadmap',
     },
     {
       'step': '04',
       'title': 'AUTOMATE',
-      'togaf':
-          'TOGAF Phases F–G · Enterprise Orchestration, IaC & DevSecOps Delivery',
+      'togaf': 'TOGAF Execution · Orchestrate Workflows & Infrastructure',
       'summary':
-          'Unify end-to-end workflow orchestration across Prefect 3.x, Kubernetes, Talend TAC, SSIS, SAS Data Integration Studio, and Airflow—paired with Terraform/PowerShell IaC, deterministic Pixi environments, GitHub Actions CI/CD, and Grafana/Loki telemetry.',
+          'Replace manual toil and disconnected scripts with end-to-end pipeline orchestration, Infrastructure as Code (IaC), CI/CD delivery, and AI-ready automation tailored to the organization\'s stack.',
       'deliverable':
-          'Deliverable: Unified Orchestration Flows, CI/CD Pipelines & Observability Stack',
+          'Deliverable: Automated Orchestration Pipelines, Declarative IaC & Live Telemetry',
     },
     {
       'step': '05',
       'title': 'ADAPT',
-      'togaf':
-          'TOGAF Phase H · Continuous Governance, CNCF Evolution & Enablement',
+      'togaf': 'TOGAF Governance · Enablement, Training & Evolution',
       'summary':
-          'Sustain and evolve the platform through CNCF cloud-native standards (Kubernetes, Istio, OPA Gatekeeper, ArgoCD), FinOps cost optimization, comprehensive runbooks, and hands-on engineering training so internal teams operate with full autonomy.',
+          'Sustain long-term organizational agility through architecture governance, CNCF cloud-native standards, operational runbooks, and hands-on team training as AI and agentic systems evolve.',
       'deliverable':
-          'Deliverable: Team Training & Runbooks, Governance Policies & Continuous FinOps / SRE Evolution',
+          'Deliverable: Governance Standards, Team Training Playbooks & Continuous Evolution',
     },
   ];
 
