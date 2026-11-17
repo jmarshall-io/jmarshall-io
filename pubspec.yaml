@@ -78,10 +78,7 @@ flutter:
     - assets/svg/firebase.svg
     - assets/svg/flutter.svg
     - assets/svg/Google_Workspace_product_icons.svg
-    - assets/logos/lumen.png
-    - assets/logos/general-dynamics.png
-    - assets/logos/coquina-systems.png  
-    - assets/logos/obsidian-logo-gradient.svg
+    - assets/logos/
     - assets/skills_experience.csv
 
   fonts:
