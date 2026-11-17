@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
         HomePage(onStartInquiry: () => _onItemTapped(1)),
         const ChatPage(),
         const ServicesPage(),
-        const ProjectsPage(),
+        ProjectsPage(onStartInquiry: () => _onItemTapped(1)),
         const SettingsPage(),
       ];
 

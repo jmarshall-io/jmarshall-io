@@ -43,64 +43,70 @@ class _ServicesPageState extends State<ServicesPage> {
     super.dispose();
   }
 
-  // List of services
+  // List of services aligned with 5-A TOGAF & Enterprise Orchestration
   final List<Map<String, dynamic>> services = [
     {
-      'title': 'Cloud Integration',
+      'title': 'Enterprise & Systems Architecture (TOGAF)',
       'description':
-          'Seamless integration of cloud services into your infrastructure.',
-      'icon': Icons.cloud,
+          'Current-to-Target (As-Is → To-Be) roadmaps, ADRs, and portfolio rationalization across regulated federal, healthcare, and commercial sectors.',
+      'icon': Icons.account_balance_outlined,
       'skills': [
-        'AWS Amazon Web Services',
-        'Microsoft Azure',
-        'Google Cloud Platform',
-        'Hybrid Cloud Setup'
+        '5-A Engagement Lifecycle (Assess → Assimilate → Architect → Automate → Adapt)',
+        'TOGAF Foundations & Architectural Decision Records (ADRs)',
+        'Current-State (As-Is) to Target-State (To-Be) Roadmaps',
+        'HIPAA, FISMA & Zero-Trust Governance (gMSA, IAM, Azure AD / Entra)',
+        'FinOps Cloud Cost Modeling, Metering & Trade-Off Analysis',
       ]
     },
     {
-      'title': 'Enterprise IT Solutions',
-      'description': 'Comprehensive IT solutions for enterprises.',
-      'icon': Icons.business,
-      'skills': [
-        'Digital Enterprise Architecture',
-        'IT Strategy Consulting',
-        'Digital Transformation'
-      ]
-    },
-    {
-      'title': 'AI & Automation',
-      'description': 'AI-driven automation for improved efficiency.',
-      'icon': Icons.settings,
-      'skills': [
-        'AI Chatbots',
-        'RPA (Robotic Process Automation)',
-        'Machine Learning Models'
-      ]
-    },
-    {
-      'title': 'Data Analytics',
-      'description': 'Advanced data analytics to gain insights.',
-      'icon': Icons.analytics,
-      'skills': [
-        'Data Migration',
-        'Business Intelligence',
-        'Big Data Management'
-      ]
-    },
-    {
-      'title': 'Orchestration & DevOps',
+      'title': 'Enterprise Workflow & Pipeline Orchestration',
       'description':
-          'Scalable infrastructure, automation, and CI/CD pipelines.',
-      'icon': Icons.cloud_circle,
+          'Unifying fragmented scheduled tasks and legacy scripts under resilient, observable orchestration engines.',
+      'icon': Icons.hub_outlined,
       'skills': [
-        'Kubernetes Cluster Setup',
-        'Helm Chart Management',
-        'CI/CD Pipeline Design (Jenkins, GitLab CI)',
-        'Docker Containerization',
-        'Infrastructure as Code (Terraform, Ansible)',
-        'Monitoring & Logging (Prometheus, Grafana)',
-        'Kubernetes Security & Hardening',
-        'Cloud Native Solutions'
+        'Prefect 3.x Unified Pipeline Orchestration & Self-Healing Hooks',
+        'Talend Data Fabric (TAC) & Talend Studio Big Data Enterprise',
+        'SQL Server Integration Services (SSIS) & SAS Data Integration Studio',
+        'Google Cloud Composer & Apache Airflow DAG Engineering',
+        'Deterministic Python 3.12 Runtime Management (Pixi & uv)',
+      ]
+    },
+    {
+      'title': 'Cloud, On-Prem & Hybrid Data Platforms (ETL & ELT)',
+      'description':
+          'Designing governed Medallion data refineries and cross-cloud data lakes across Cloud, On-Premises, and Hybrid environments.',
+      'icon': Icons.storage_outlined,
+      'skills': [
+        'dbt (Data Build Tool) Medallion Architecture (Bronze → Silver → Gold)',
+        'Google BigQuery, SQL Server (HA/DR Clusters), PostgreSQL & DuckDB',
+        'Microsoft Azure Data Factory (ADF), Azure Databricks & Blob Storage',
+        'AWS Glue, Redshift, S3 Parquet & Athena Serverless Pipelines',
+        'Enterprise ERP & Healthcare Data Migration (SAP, JDE, BAAN, HL7/FHIR, CMS)',
+      ]
+    },
+    {
+      'title': 'Multi-Cloud Infrastructure & CNCF Platform Engineering',
+      'description':
+          'Production-grade Kubernetes clusters, service meshes, cross-cloud HA VPN interconnects, and Infrastructure as Code.',
+      'icon': Icons.cloud_sync_outlined,
+      'skills': [
+        'CNCF Kubernetes Platform Engineering (CKA, CKAD & CKS Certified)',
+        'GCP Anthos & Istio Service Mesh (ICA Certified) + Traffic Director / Envoy',
+        'OPA Gatekeeper Policy-as-Code, ArgoCD GitOps & Helm Charts',
+        'Terraform IaC, PowerShell DSC (LCM) & GitHub Actions CI/CD',
+        'Cross-Cloud HA VPN Interconnects (AWS ↔ GCP ↔ Azure) & Workspace Migrations',
+      ]
+    },
+    {
+      'title': 'Full-Stack Observability, Runbooks & Team Enablement',
+      'description':
+          'Real-time pipeline/cluster telemetry, executive dashboards, and hands-on engineering enablement.',
+      'icon': Icons.analytics_outlined,
+      'skills': [
+        'Grafana, Loki, Fluent Bit & Prometheus Telemetry Stacks',
+        'Dynatrace, Elasticsearch & K9s Cluster Triage',
+        'Dual-Telemetry Pipeline Audit Schemas & Stage-Level Lineage',
+        'Operational Runbooks, SOPs & Engineering Team Training (40% Faster Onboarding)',
       ]
     }
   ];
