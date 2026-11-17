@@ -60,11 +60,12 @@ class _HomePageState extends State<HomePage> {
     {
       'step': '05',
       'title': 'ADAPT',
-      'togaf': 'TOGAF Phase H · Agentic Evolution & Fractional Leadership',
+      'togaf':
+          'TOGAF Phase H · Continuous Governance, CNCF Evolution & Enablement',
       'summary':
-          'Embed autonomous AI agents (Vertex AI / Gemini / RAG), self-healing drift monitors, and engineering playbooks so the organization scales independently and interdependently.',
+          'Sustain and evolve the platform through CNCF cloud-native standards (Kubernetes, Istio, OPA Gatekeeper, ArgoCD), FinOps cost optimization, comprehensive runbooks, and hands-on engineering training so internal teams operate with full autonomy.',
       'deliverable':
-          'Deliverable: Agentic Workflows, Runbooks & Fractional Architect / CTO Advisory',
+          'Deliverable: Team Training & Runbooks, Governance Policies & Continuous FinOps / SRE Evolution',
     },
   ];
 
@@ -530,11 +531,11 @@ class _HomePageState extends State<HomePage> {
                   _SkillChip(label: 'Cloud · On-Prem · Hybrid (ETL & ELT)'),
                   _SkillChip(label: 'Prefect 3.x · Talend · SSIS · SAS DI'),
                   _SkillChip(label: 'dbt · BigQuery · SQL Server'),
-                  _SkillChip(label: 'Kubernetes (CKA/CKAD/CKS) & Istio'),
-                  _SkillChip(label: 'Terraform & PowerShell IaC'),
-                  _SkillChip(label: 'Vertex AI & Agentic RAG'),
-                  _SkillChip(label: 'Zero-Trust DevSecOps (gMSA/IAM)'),
-                  _SkillChip(label: 'GCP · AWS · Azure · TOGAF'),
+                  _SkillChip(label: 'CNCF · Kubernetes (CKA/CKAD/CKS) · Istio'),
+                  _SkillChip(label: 'Terraform · Helm · ArgoCD · GitOps'),
+                  _SkillChip(label: 'Observability (Grafana · Loki · Prometheus)'),
+                  _SkillChip(label: 'Zero-Trust DevSecOps (gMSA · IAM · OPA)'),
+                  _SkillChip(label: 'TOGAF · FinOps · Team Enablement'),
                 ],
               ),
             ),

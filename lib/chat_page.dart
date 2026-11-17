@@ -10,14 +10,13 @@ import 'package:url_launcher/url_launcher.dart';
 
 const String profileContext = """
 Name: Jonathan Marshall
-Role: Principal Systems Architect | Enterprise & Cloud Integration Leader
+Role: Principal Systems Architect & Orchestrator | Enterprise & Cloud Integration Leader
 Location: Washington, DC Area (Remote-First)
 Contact: jmarshall.systems@gmail.com | https://jmarshall.io
-Core Stack: Prefect 3.x, dbt (DuckDB & BigQuery), Google Cloud Platform (GCP, BigQuery, Vertex AI, GKE, Anthos/Istio), AWS (Glue, S3, Athena, Redshift), Azure (Data Factory, AD), Kubernetes (CKA, CKAD, CKS), Terraform, Pixi/uv, Grafana/Loki/Fluent Bit, Zero-Trust gMSA, TOGAF & FISMA.
+Core Stack: Prefect 3.x, dbt, Talend TAC, SSIS, SAS Data Integration Studio, Apache Airflow, Google Cloud Platform (GCP, BigQuery, GKE, Anthos/Istio), AWS (Glue, S3, Athena, Redshift), Azure (Data Factory, Entra ID/AD, Databricks), CNCF / Kubernetes (CKA, CKAD, CKS, Istio ICA, Helm, ArgoCD, OPA Gatekeeper), Terraform, Pixi/uv, Grafana/Loki/Fluent Bit/Prometheus, Zero-Trust gMSA, TOGAF & FISMA.
 Flagship Deliveries:
-1. Public Health Data Modernization (CDC Foundation): Unified 40+ pipelines under Prefect 3.x & Pixi, built metadata-driven dbt Medallion bridge (80% faster staging), dual-telemetry observability, and Zero-Trust gMSA.
-2. Hybrid Cloud Healthcare & AI Refinery: Synthea zero-PHI generator -> GCS Parquet -> Dual-target DuckDB/BigQuery dbt -> Vertex AI Gemini clinical enrichment & Vector Search.
-3. Enterprise Cloud & Platform Engineering: Coquina (9,850-mailbox M365 to Google Workspace migration, AWS-GCP HA VPN), FRA/DOT (TOGAF/FISMA EA), Delta Dental (K8s, ArgoCD, OPA Gatekeeper), Lumen (GKE BigQuery FinOps, Traffic Director), Vitu (Anthos Istio Service Mesh).
+1. Public Health Data Modernization (CDC Foundation): Unified 40+ pipelines under Prefect 3.x & Pixi, built metadata-driven dbt Medallion bridge (80% faster staging), dual-telemetry observability, Zero-Trust gMSA, and engineering onboarding/training playbooks (cutting setup time by 40%).
+2. Enterprise Cloud, Hybrid & CNCF Platform Engineering: Coquina (9,850-mailbox M365 to Google Workspace migration, AWS-GCP HA VPN), FRA/DOT (TOGAF/FISMA EA & Azure Data Factory), Delta Dental (On-Prem K8s, ArgoCD, OPA Gatekeeper), Lumen (GKE BigQuery FinOps, Traffic Director), Vitu (Anthos Istio Service Mesh).
 """;
 
 class ChatPage extends StatefulWidget {
@@ -54,7 +53,7 @@ class _ChatPageState extends State<ChatPage> {
     '02 Assimilate (Data & Schema Unification)',
     '03 Architect (Cloud / On-Prem / Hybrid ETL & ELT)',
     '04 Automate (Prefect / Talend / SSIS / SAS DI / K8s)',
-    '05 Adapt (Fractional AI / CTO Advisory)',
+    '05 Adapt (CNCF Governance, Training & Enablement)',
   ];
 
   static const List<String> _locationOptions = [
@@ -90,8 +89,8 @@ class _ChatPageState extends State<ChatPage> {
     'Cloud, On-Prem & Hybrid (ETL & ELT — dbt / BigQuery / SQL)',
     'Enterprise Orchestration (Prefect / Talend / SSIS / SAS DI / K8s)',
     'Multi-Cloud Infrastructure (GCP / AWS / Azure / Terraform)',
-    'Kubernetes & Service Mesh (CKA / CKAD / CKS / Istio)',
-    'Enterprise AI & Agentic Systems (Vertex AI / RAG)',
+    'CNCF Cloud-Native (K8s CKA/CKAD/CKS · Istio · ArgoCD · OPA)',
+    'Observability, Runbooks & Training (Grafana · Loki · Prometheus)',
     'Enterprise Architecture (TOGAF / FinOps / Zero-Trust)',
   ];
 
