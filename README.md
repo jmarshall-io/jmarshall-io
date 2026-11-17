@@ -1,30 +1,20 @@
-# Jonathan Marshall
+<<<<<<< HEAD
+# mesh-wei
+=======
+# jmarshall_io
 
-Systems & Enterprise Architect with a focus on data platforms, automation, and cloud-native architecture.
+A new Flutter project.
 
-I work across public-sector and enterprise environments designing, modernizing, and operating scalable systems that sit at the intersection of data engineering, infrastructure, and platform reliability.
+## Getting Started
 
----
+This project is a starting point for a Flutter application.
 
-### Core Areas
-- Enterprise & Systems Architecture
-- Data Platforms & Integration
-- Cloud & Hybrid Infrastructure
-- Automation & DevOps Enablement
-- Technical Strategy & Modernization
+A few resources to get you started if this is your first Flutter project:
 
----
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-### Selected Focus
-This GitHub space will contain:
-- Architecture patterns and reference implementations
-- Redacted and generalized system designs
-- Automation scaffolding and tooling
-- Proof-of-concept work and experiments
-
----
-
-### Contact
-- Website: https://jmarshall.io
-- Email: jmarshall.systems@gmail.com
-- https://www.linkedin.com/in/systemintegrationengineer/
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
+>>>>>>> 50ef5db (Add Android Studio project files)

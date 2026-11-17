@@ -1,0 +1,54 @@
+name,experience
+Flutter,0.9
+Dart,0.85
+JavaScript,0.75
+AWS,0.6
+Kubernetes,0.8
+Terraform,0.7
+SQL,0.9
+BigQuery,0.9
+GCP,0.8
+Azure,0.7
+Cloud Migration,0.75
+Process Automation,0.8
+Technical Solutions,0.85
+Deployment,0.9
+Change Mgmt,0.75
+Life Cycle Mgmt,0.8
+Data Engineering,0.7
+Security/Networking,0.8
+Arch. Standards,0.9
+Project Mgmt,0.85
+Data Mgmt,0.8
+Stakeholder Collab,0.75
+Agile,0.85
+Shell Scripting,0.7
+ETL Automation,0.75
+Data Visualization,0.85
+Jira,0.7
+Confluence,0.7
+LucidChart,0.65
+Gliffy,0.65
+Prometheus,0.7
+Grafana,0.75
+Cloud KMS,0.65
+IaC (Terraform),0.9
+Serverless,0.7
+API Mgmt,0.75
+Performance Opt,0.8
+DR Planning,0.7
+SAS Ent. Guide,0.6
+Data Studio,0.65
+Dataflow,0.7
+Pub/Sub,0.7
+GKE,0.8
+SSIS,0.7
+Data Pipelines,0.8
+Cloud Storage,0.75
+Cloud Cost Opt,0.7
+VPC Service Controls,0.65
+VPN Config,0.7
+Hybrid Cloud,0.75
+Data Quality,0.7
+Data Governance,0.65
+Service Mesh,0.7

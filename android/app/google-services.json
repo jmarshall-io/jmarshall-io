@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "557307545185",
+    "firebase_url": "https://jdm-io-default-rtdb.firebaseio.com",
+    "project_id": "jdm-io",
+    "storage_bucket": "jdm-io.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557307545185:android:929f9c50641d90609a0c20",
+        "android_client_info": {
+          "package_name": "com.meshwei.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557307545185-83ab6kq42apsss2qb0dfu6n8qkjehni0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.meshwei.app",
+            "certificate_hash": "6b4dc7c0ef1b12f06218cd28511d1812c797989b"
+          }
+        },
+        {
+          "client_id": "557307545185-okhb7s6ibimf0fln28lqs1bq99p07mjm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5dWmabF1VPeNTvZEyF5nr9mlW-VJ-8lE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557307545185-okhb7s6ibimf0fln28lqs1bq99p07mjm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "557307545185-ide2kuv5m7k2k0l6ja6ge7p9fcaog1qc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.meshwei.meshwei"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,97 @@
+name: 🚀 jmarshall.io Firebase Deploy & ntfy Telemetry
+run-name: 🚀 Deploy jmarshall.io triggered from ${{ github.ref_name }}
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧩 Checkout code
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: 🔐 Configure .env & ntfy Topic
+        env:
+          OPENAI_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_ADMIN_TOPIC }}
+        run: |
+          OPENAI_CLEAN=$(echo "$OPENAI_KEY" | tr -d '\n\r')
+          NTFY_CLEAN=$(echo "${NTFY_TOPIC:-jmarshall-systems-io}" | tr -d '\n\r')
+          echo "OPENAI_API_KEY=$OPENAI_CLEAN" > .env
+          echo "NTFY_ADMIN_TOPIC=$NTFY_CLEAN" >> .env
+
+      - name: 🔧 Install dependencies
+        run: flutter pub get
+
+      - name: 🏗️ Build Flutter Web
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_ADMIN_TOPIC }}
+        run: |
+          NTFY_CLEAN=$(echo "${NTFY_TOPIC:-jmarshall-systems-io}" | tr -d '\n\r')
+          flutter build web --release --pwa-strategy=none \
+            --dart-define="NTFY_ADMIN_TOPIC=$NTFY_CLEAN" \
+            --dart-define="BUILD_VERSION=$(git rev-parse --short HEAD)"
+
+      - name: 🔥 Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JDM_IO }}'
+          channelId: ${{ github.ref_name == 'main' && 'live' || github.ref_name }}
+          projectId: jdm-io
+
+      - name: 📱 Push Success Notification (ntfy.sh)
+        if: success()
+        env:
+          NTFY_DEPLOY_TOPIC: ${{ secrets.NTFY_DEPLOY_TOPIC }}
+        run: |
+          SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
+          for TOPIC in "jmarshall-systems-io" "${NTFY_DEPLOY_TOPIC:-jmarshall-systems-deploy}"; do
+            if [ "${{ github.ref_name }}" == "main" ]; then
+              curl -s -H "Title: jmarshall.io Deployed to LIVE Site" \
+                   -H "Priority: high" \
+                   -H "Tags: rocket,tada" \
+                   -H "Click: https://jmarshall.io" \
+                   -d "GitHub Actions CI/CD published main to PRODUCTION by ${{ github.actor }}. Commit: $SHORT_SHA (Run #${{ github.run_number }})" \
+                   "https://ntfy.sh/$TOPIC"
+            else
+              curl -s -H "Title: jmarshall.io Deployed to STAGING (${{ github.ref_name }})" \
+                   -H "Priority: default" \
+                   -H "Tags: test_tube,eyes" \
+                   -H "Click: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+                   -d "GitHub Actions CI/CD published preview channel by ${{ github.actor }}. Commit: $SHORT_SHA (Run #${{ github.run_number }})" \
+                   "https://ntfy.sh/$TOPIC"
+            fi
+          done
+
+      - name: 🚨 Push Failure Notification (ntfy.sh)
+        if: failure()
+        env:
+          NTFY_DEPLOY_TOPIC: ${{ secrets.NTFY_DEPLOY_TOPIC }}
+        run: |
+          SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
+          for TOPIC in "jmarshall-systems-io" "${NTFY_DEPLOY_TOPIC:-jmarshall-systems-deploy}"; do
+            curl -s -H "Title: jmarshall.io GitHub Action FAILED" \
+                 -H "Priority: urgent" \
+                 -H "Tags: warning,skull" \
+                 -H "Click: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+                 -d "CI/CD pipeline failed on branch ${{ github.ref_name }} (Commit: $SHORT_SHA, Run #${{ github.run_number }})." \
+                 "https://ntfy.sh/$TOPIC"
+          done

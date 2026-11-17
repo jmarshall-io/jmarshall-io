@@ -1,0 +1,112 @@
+name: jmarshall_io
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  url_launcher: ^6.3.0
+  cupertino_icons: ^1.0.8
+  intl: ^0.20.0
+  chat_gpt_sdk: ^3.1.0
+  tuple: ^2.0.2 
+  animated_text_kit: ^4.2.2
+  glassmorphism_widgets: ^0.2.2
+  glossy: ^0.0.4
+  flutter_acrylic: ^1.1.4
+  flutter_svg: ^2.0.10+1
+  cached_network_image: ^3.4.1 
+  cached_network_image_plus: ^0.0.5
+  carousel_slider: ^5.0.0
+  carousel_slider_plus: ^7.0.1
+  carousel_animations: ^0.0.4
+  carousel_images: ^1.1.2
+  carousel_slider_x: ^6.0.2 
+  csv: ^6.0.0
+  http: ^1.2.2
+  firebase_core: ^3.5.0
+  firebase_storage: ^12.3.1
+  info_popup: ^4.3.1
+  shared_preferences: ^2.0.15
+  email_validator: ^2.0.1
+  file_picker: ^8.1.2 
+  firebase_auth: any
+  flutter_dotenv: ^6.0.0
+  flutter_localizations:
+    sdk: flutter
+
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  geolocator: ^13.0.1
+
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - .env
+    - assets/github.png
+    - assets/linkedin-icon.png
+
+    - assets/twitter-icon.png
+    - assets/marshallsmind-logo.png
+    - assets/profile-photo.jpeg
+    - assets/instagram.jpeg
+    - assets/github-transparent.jpeg
+    - assets/github-black.png
+    - assets/github-black-bg.png
+    - assets/linked-in-black-bg.png
+    - assets/twitter-black-bg.png
+    - assets/map-icon-grey.png
+    - assets/svg/azure.svg
+    - assets/svg/gcp.svg
+    - assets/svg/jira.svg
+    - assets/svg/logo-google-workspace.svg
+    - assets/svg/terraform-svgrepo-com.svg
+    - assets/svg/firebase.svg
+    - assets/svg/flutter.svg
+    - assets/svg/Google_Workspace_product_icons.svg
+    - assets/logos/lumen.png
+    - assets/logos/general-dynamics.png
+    - assets/logos/coquina-systems.png  
+    - assets/logos/obsidian-logo-gradient.svg
+    - assets/skills_experience.csv
+
+  fonts:
+    - family: Orbitron
+      fonts:
+        - asset: assets/fonts/Orbitron/static/Orbitron-Black.ttf
+          weight: 400
+        - asset: assets/fonts/Orbitron/static/Orbitron-Medium.ttf
+          weight: 100
+    - family: Audiowide
+      fonts:
+        - asset: assets/fonts/Audiowide/Audiowide-Regular.ttf 
+          weight: 100
+    - family: interstellar_trip 
+      fonts:
+        - asset: assets/fonts/interstellar_trip/Interstellar-Trip.ttf 
+          weight: 200
+        - asset: assets/fonts/interstellar_trip/Interstellar-Trip-Italic.ttf 
+          weight: 100
+    - family: TrueType 
+      fonts:
+        - asset: assets/fonts/TrueType/SFDigitalReadout-Light.ttf 
+          weight: 200
+        - asset: assets/fonts/TrueType/SFDigitalReadout-LightObliq.ttf 
+          weight: 100
+        - asset: assets/fonts/TrueType/SFDigitalReadout-Heavy.ttf 
+          weight: 400
+        - asset: assets/fonts/TrueType/SFDigitalReadout-HeavyObliq.ttf 
+          weight: 300
