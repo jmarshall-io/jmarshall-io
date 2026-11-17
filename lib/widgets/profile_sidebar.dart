@@ -97,7 +97,7 @@ class _ProfileSidebarState extends State<ProfileSidebar> {
               ),
               child: const CircleAvatar(
                 radius: 56,
-                backgroundImage: AssetImage('assets/profile-photo.jpeg'),
+                backgroundImage: AssetImage('assets/profile-photo-bw.jpeg'),
                 backgroundColor: Colors.black,
               ),
             ),

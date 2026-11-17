@@ -76,7 +76,7 @@ class _HudHeaderState extends State<HudHeader> {
                     ),
                     child: const CircleAvatar(
                       radius: 18, // Reduced size
-                      backgroundImage: AssetImage('assets/profile-photo.jpeg'),
+                      backgroundImage: AssetImage('assets/profile-photo-bw.jpeg'),
                     ),
                   ),
                   const SizedBox(width: 10),

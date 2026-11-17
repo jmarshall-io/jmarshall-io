@@ -62,6 +62,7 @@ flutter:
     - assets/twitter-icon.png
     - assets/marshallsmind-logo.png
     - assets/profile-photo.jpeg
+    - assets/profile-photo-bw.jpeg
     - assets/instagram.jpeg
     - assets/github-transparent.jpeg
     - assets/github-black.png
